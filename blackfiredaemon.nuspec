@@ -34,8 +34,8 @@ This is a nuspec. It mostly adheres to https://docs.nuget.org/create/Nuspec-Refe
 
     <!-- == SOFTWARE SPECIFIC SECTION == -->
     <!-- This section is about the software itself -->
-    <title>Tideways Daemon</title>
-    <authors>Tideways GmbH, support at tideways dot io</authors>
+    <title>Blackfire Agent</title>
+    <authors>Blackfire SAS, support at blackfire dot io</authors>
 	<owners>David García García, deivid dot garcia dot garcia at gmail dot com</owners>
     <!-- projectUrl is required for the community feed -->
     <projectUrl>https://github.com/david-garcia-garcia/blackfiredaemon-chocolatey</projectUrl>
