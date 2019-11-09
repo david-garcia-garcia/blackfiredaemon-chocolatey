@@ -1,0 +1,20 @@
+clone_depth: 8
+image:
+  - Visual Studio 2019
+build_script:
+  - cmd: cd %APPVEYOR_BUILD_FOLDER%
+  - cmd: choco pack
+test_script:
+  - cmd: cd %APPVEYOR_BUILD_FOLDER%
+  - cmd: choco install nssm -y
+  - cmd: choco install chocolatey-core.extension -y
+  - cmd: choco install blackfiredaemon -y -dv -s .
+  - cmd: choco uninstall blackfiredaemon -y -dv -s .
+on_failure:
+  - cmd: 7z a -r C:\package.zip %APPVEYOR_BUILD_FOLDER% > null & exit 0
+on_finish:
+  - ps: |
+       $packagePath = (Get-ChildItem -Path $path -Recurse -Filter "*.nupkg").FullName;
+       $packageName = (Get-ChildItem -Path $path -Recurse -Filter "*.nupkg").Name;
+       if([System.IO.File]::Exists($package)) { Push-AppveyorArtifact $packagePath -FileName $packageName }
+  - ps: if([System.IO.File]::Exists("c:\package.zip")) { Push-AppveyorArtifact "C:\package.zip" -FileName "package.zip" }

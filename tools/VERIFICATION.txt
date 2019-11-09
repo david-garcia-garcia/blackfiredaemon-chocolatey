@@ -1,0 +1,25 @@
+VERIFICATION
+ 
+Verification is intended to assist the Chocolatey moderators and community
+in verifying that this package's contents are trustworthy.
+ 
+Package can be verified like this:
+ 
+1. Go to
+ 
+   https://tideways.io/profiler/docs/setup/installation#windows
+
+   this page (by the owners of Tideways) contains a link to the compiled version
+   of the daemon:
+
+   https://s3-eu-west-1.amazonaws.com/qafoo-profiler/downloads/testing/tideways-windows-4.0.1p3.zip
+
+ 
+File 'tools\daemon_windows_386.exe' is obtained from:
+    https://s3-eu-west-1.amazonaws.com/qafoo-profiler/downloads/testing/tideways-windows-4.0.1p3.zip
+ 
+File 'tools\daemon_windows_amd64.exe' is obtained from:
+    https://s3-eu-west-1.amazonaws.com/qafoo-profiler/downloads/testing/tideways-windows-4.0.1p3.zip
+	
+File 'legal\License.txt' is obtained from:
+    https://github.com/tideways/php-profiler-extension/blob/master/LICENSE

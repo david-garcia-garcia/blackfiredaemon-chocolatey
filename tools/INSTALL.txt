@@ -1,0 +1,20 @@
+# Installation Windows
+
+1. Run tideways-daemon.exe as background job with --address="127.0.0.1:8136"
+2. Copy php_tideways_*.dll for your architecture (x86 or x64, nts or zts) to
+   your PHP installations extension directory and rename to php_tideways.dll.
+
+   You can find the extension directory by calling the following command:
+
+        php -r 'echo ini_get("extension_dir");'
+
+3. Copy Tideways.php into the same folder (extension directory) as php_tideways.dll
+4. Change php.ini to load and configure the extension.
+
+        extension=php_tideways.dll
+        tideways.connection=tcp://127.0.0.1:8136
+
+   Tideways is a regular extension, not a zend_extension.
+
+Follow the PHP/Linux Setup instructions for your application on
+https://tideways.io to configure the API Key, Sample-Rate and Framework.
