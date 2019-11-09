@@ -16,5 +16,5 @@ on_finish:
   - ps: |
        $packagePath = (Get-ChildItem -Path $path -Recurse -Filter "*.nupkg").FullName;
        $packageName = (Get-ChildItem -Path $path -Recurse -Filter "*.nupkg").Name;
-       if([System.IO.File]::Exists($package)) { Push-AppveyorArtifact $packagePath -FileName $packageName }
+       if([System.IO.File]::Exists($packagePath)) { Push-AppveyorArtifact $packagePath -FileName $packageName }
   - ps: if([System.IO.File]::Exists("c:\package.zip")) { Push-AppveyorArtifact "C:\package.zip" -FileName "package.zip" }
